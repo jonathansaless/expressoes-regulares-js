@@ -1,294 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Trabalho de Expressão Regular</title> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script>
-      function validate(inputField, errorField, pattern) {
-      
-          if (!pattern.test(inputField.value)) {
-            errorField.style.color = "red"
-            errorField.value = "Formato inválido"
-          } else {
-            errorField.style.color = "green"
-            errorField.value = "Formato Válido"
-          }
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
 
-        function validateNumber(field) {
-      
-          var max = parseInt(field.max);
-          var min = parseInt(field.min);
-          if (field.value > max)
-          {
-            field.value = max;
-          }
-          else if (field.value < min)
-          {
-            field.value = min;
-          }
-          
-          if (field.name == "menor") {
-            fieldMaior = document.getElementById('maior')
-            valorAtual = fieldMaior.value
-            fieldMaior.min = field.value
-            if (valorAtual < field.value) 
-            {
-              fieldMaior.value = field.value
-            }
-          }
-    }
-    
-              </script>  
-      
+    <title>Trabalho Expressão Regular</title>
   </head>
   <body>
-    <header style="text-align: center;">  
-      <img src="./imgs/UFPA.png" width="10%"/>
-      <h5>Universidade Federal do Pará<br>
-      Instituto de Ciências Exatas e Naturais<br>
-      Programa de Pós-Graduação em Ciência da Computação<br>
-      <b>Disciplina:</b> Teoria da Computação<br>
-      <b>Professor:</b> Reginaldo Santos<br>
-      <b>Equipe:</b> Jonathan J. C. de Sales, Lindalvo Neto e Maria Líbia</h5><br>      
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Expressões Regulares</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="./index.html">Questão 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link activate" href="./questao2.html">Questão 2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <img src="./imgs/UFPA.png" width="10%" />
+      <h5>
+        Universidade Federal do Pará<br />
+        Instituto de Ciências Exatas e Naturais<br />
+        Programa de Pós-Graduação em Ciência da Computação<br />
+        <b>Disciplina:</b> Teoria da Computação<br />
+        <b>Professor:</b> Reginaldo Santos<br />
+        <b>Equipe:</b> Jonathan J. C. de Sales, Lindalvo Neto e Maria Líbia
+      </h5>
+      <br />
     </header>
+
     <ol>
       <li>
-        Desenvolva, um conjunto de máscaras de validação, por de expressões regulares, que obedecem as especificações prévias de cada campo dos subitens. <br>
-        Considere os seguintes alfabetos:<br>
-        Σ = {a, b, c, …, z},<br>
-        Γ = {A, B, C, …, Z} e<br>
-        N = {0,1, 2, …, 9}.        
+        Desenvolva, um conjunto de máscaras de validação, por de expressões
+        regulares, que obedecem as especificações prévias de cada campo dos
+        subitens. <br />
+        Considere os seguintes alfabetos:<br />
+        Σ = {a, b, c, …, z},<br />
+        Γ = {A, B, C, …, Z} e<br />
+        N = {0,1, 2, …, 9}.
       </li>
       <ul>
-        <li>Nome, nome do meio e sobrenome:
+        <li>
+          Nome, nome do meio e sobrenome:
           <ol>
-            <li>Nome, nome do meio e sobrenome devem vir separados por um espaço apenas</li>
+            <li>
+              Nome, nome do meio e sobrenome devem vir separados por um espaço
+              apenas
+            </li>
             <li>O nome do meio é opcional</li>
             <li>Nome e sobrenome devem ser ambos não vazios</li>
             <li>Não deve aceitar caracteres especiais ou números</li>
-            <li>O primeiro símbolo do nome e sobrenome, e do nome do meio se existir, deve ser do alfabeto Γ e os outros símbolos devem ser do alfabeto Σ</li>
-          </ol>          
+            <li>
+              O primeiro símbolo do nome e sobrenome, e do nome do meio se
+              existir, deve ser do alfabeto Γ e os outros símbolos devem ser do
+              alfabeto Σ
+            </li>
+          </ol>
         </li>
-
         <div class="mb-3 row">
-          <label for="nome" class="col-sm-2 col-form-label">Nome completo:</label>
+          <label for="name" class="col-sm-1 col-form-label">Nome:</label>
           <div class="col-sm-6">
-            <input class="form-control" id="nome" placeholder="Nome e Sobrenome" onchange="const pattern = /^(?:[A-Z]{1}[a-z]*)[ ](?:[A-Z]{1}[a-z]*[ ])?(?:[A-Z]{1}[a-z]*)$/;validate(document.getElementById('nome'),document.getElementById('nameError'),pattern)">
+            <input class="form-control" type="text" id="name" />
           </div>
           <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="nameError" value="">
+            <b><div id="nameError" class="form-control-plaintext"></div></b>
           </div>
         </div>
-        <hr>
-        <li>Email:
+        <hr />
+        <li>
+          Email:
           <ol>
             <li>Sentenças devem conter um, e apenas um, símbolo “@”</li>
-            <li>Excetuando o símbolo “@”, as sentenças possuem apenas símbolos de Σ</li>
+            <li>
+              Excetuando o símbolo “@”, as sentenças possuem apenas símbolos de
+              Σ
+            </li>
             <li>Sentenças não devem começar com o símbolo “@”</li>
             <li>Sentenças devem terminar com a subcadeia “.com.br” ou “.br”</li>
-            <li>Sentenças devem ter, pelo menos, um símbolo de Σ entre o símbolo “@” e a subcadeia “.com.br” ou a subcadeia “.br”</li>
-          </ol>          
+            <li>
+              Sentenças devem ter, pelo menos, um símbolo de Σ entre o símbolo
+              “@” e a subcadeia “.com.br” ou a subcadeia “.br”
+            </li>
+          </ol>
         </li>
-
         <div class="mb-3 row">
-          <label for="email" class="col-sm-2 col-form-label">Email:</label>
+          <label for="email" class="col-sm-1 col-form-label">Email:</label>
           <div class="col-sm-6">
-            <input class="form-control" id="email" placeholder="usuario@dominio.com" onchange="const pattern = /^[a-z]+@[a-z]+\.(?:com\.br|br)$/;validate(document.getElementById('email'),document.getElementById('emailError'),pattern)">
+            <input class="form-control" type="text" id="email" />
           </div>
           <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="emailError" value="">
+            <b><div id="emailError" class="form-control-plaintext"></div></b>
           </div>
         </div>
-        
-        <hr>
-        <li>Senha:
+        <hr />
+        <li>
+          Senha:
           <ol>
             <li>Sentenças podem conter símbolos de Σ ∪ Γ ∪ N</li>
             <li>Sentenças devem ter pelo menos um símbolo de Γ e outro de N</li>
             <li>Sentenças devem ter comprimento igual a 8</li>
-          </ol>          
-        </li>
-        <div class="mb-3 row">
-          <label for="senha" class="col-sm-2 col-form-label">Senha:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="senha" placeholder="Senha" onchange="const pattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z0-9]{8}$/;validate(document.getElementById('senha'),document.getElementById('senhaError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="senhaError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>CPF:
-          <ol>
-            <li>Sentenças devem ter o formato <b>xxx.xxx.xxx-xx</b>, onde x ∈ N</li>
-          </ol>          
-        </li>
-        <div class="mb-3 row">
-          <label for="cpf" class="col-sm-2 col-form-label">CPF:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="cpf" placeholder="999.999.999-99" onchange="const pattern = /^((?:\d{3}\.){2}\d{3}-\d{2})$/;validate(document.getElementById('cpf'),document.getElementById('cpfError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="cpfError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>Telefone:
-          <ol>
-            <li>Sentenças devem ter um dos formatos seguintes:<br>
-              (xx) 9xxxx-xxxx<br>
-              (xx) 9xxxxxxxx<br>
-              xx 9xxxxxxxx<br>
-              onde x ∈ N.</li>
-          </ol>          
-        </li>
-        <div class="mb-3 row">
-          <label for="telefone" class="col-sm-2 col-form-label">Telefone:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="telefone" placeholder="(00) 90000-0000" onchange="const pattern = /^(?:^\(\d{2}\)[ ]{1}9\d{4}-?\d{4})|(?:^\d{2}[ ]{1}9\d{4}\d{4})$/;validate(document.getElementById('telefone'),document.getElementById('telefoneError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="telefoneError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>Data e Horário:
-          <ol>
-            <li>Sentenças devem ter o formato dd/mm/aaaa hh:mm:ss, onde d, m, a, h, m, s ∈ N.</li>
-          </ol>          
-        </li>
-        <div class="mb-3 row">
-          <label for="datahora" class="col-sm-2 col-form-label">Data e Horário:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="datahora" placeholder="dd/mm/aaaa hh:mm:ss" onchange="const pattern = /^\d{2}\/\d{2}\/\d{4}[ ]\d{2}:\d{2}:\d{2}$/ ;validate(document.getElementById('datahora'),document.getElementById('datahoraError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="datahoraError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>Número real com ou sem sinal::
-          <ol>
-            <li>Sentenças devem começar com um dos símbolos do alfabeto {+, -, ε}</li>
-            <li>Em seguida, as sentenças devem ter, pelo menos, um símbolo do alfabeto N</li>
-            <li>Em seguida, as sentenças devem ter, exatamente, um símbolo separador “.”</li>
-            <li>Em seguida, as sentenças devem finalizar com, pelo menos, um símbolo de N</li>
-            <li>Exceção: números sem a parte fracionária também devem ser aceitos</li>
-          </ol>          
-        </li>
-      </ul>
-      <div class="mb-3 row">
-        <label for="numero" class="col-sm-2 col-form-label">Numero:</label>
-        <div class="col-sm-6">
-          <input class="form-control" id="numero" onchange="const pattern = /^[+-]?\d+(\.\d+)?$/ ;validate(document.getElementById('numero'),document.getElementById('numeroError'),pattern)">
-        </div>
-        <div class="col-sm-2">
-          <input type="text" readonly class="form-control-plaintext" id="numeroError" value="">
-        </div>
-      </div>
-
-      <hr><hr><hr>
-      <li>Implemente, na linguagem de programação de sua preferência, os arranjos familiares solicitados nos itens abaixo sobre o alfabeto Σ = {H, M, h, m}, com significado:
-        <ul>
-          <li><b>H</b>representa um homem;</li>
-          <li><b>M</b>representa uma mulher;</li>
-          <li><b>h</b>representa um filho do sexo masculino (natural ou adotado);</li>
-          <li><b>m</b>representa um filho do sexo feminino (natural ou adotado);</li>
-        </ul>
-        A posição relativa de uma letra em relação às demais indica a idade relativa daquele membro da família em relação aos demais (os mais novos estão sempre à direita).
-      </li>
-      <ol type="a">
-        <li>Casais heterossexuais mais velhos que os filhos com pelo menos duas filhas mulheres, ou pelo menos um filho homem, ou ainda pelo menos dois filhos homens e uma filha mulher.</li>
-        <div class="mb-3 row">
-          <label for="2a" class="col-sm-2 col-form-label">Arranjo:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="2a" onchange="const pattern = /^(HM|MH)((h|m)*m{2,}(h|m)*|(h|m)*h(h|m)*)$/ ;validate(document.getElementById('2a'),document.getElementById('2aError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="2aError" value="">
-          </div>
-        </div>
-  
-        <hr>
-        <li>Casais heterossexuais mais velhos que os filhos e com uma quantidade ímpar de filhas mulheres.</li>
-        <div class="mb-3 row">
-          <label for="2b" class="col-sm-2 col-form-label">Arranjo:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="2b" onchange="const pattern = /^(HM|MH)(h*mh*(mh*mh*)*)$/ ;validate(document.getElementById('2b'),document.getElementById('2bError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="2bError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>Casais heterossexuais mais velhos que os filhos, com a filha mais velha mulher e o filho mais novo homem.</li>
-        <div class="mb-3 row">
-          <label for="2c" class="col-sm-2 col-form-label">Arranjo:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="2c" onchange="const pattern = /^(?:HM|MH)m(?:h|m)*h$/ ;validate(document.getElementById('2c'),document.getElementById('2cError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="2cError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>Casais homossexuais mais velhos que os filhos, com pelo menos seis filhos, em que os dois primeiros filhos formam um casal e os últimos também.</li>
-        <div class="mb-3 row">
-          <label for="2d" class="col-sm-2 col-form-label">Arranjo:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="2d" onchange="const pattern = /^(?:HH|MM)(?:hm|mh)(?:m{2,}|h{2,}|(?:mh|hm))*(?:hm|mh)$/ ;validate(document.getElementById('2d'),document.getElementById('2dError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="2dError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>Casais homossexuais mais velhos que os filhos, em que o sexo dos filhos é alternado conforme a ordem de nascimento.</li>
-        <div class="mb-3 row">
-          <label for="2e" class="col-sm-2 col-form-label">Arranjo:</label>
-          <div class="col-sm-6">
-            <input class="form-control" id="2e" onchange="const pattern = /^(?:HH|MM)(?:m(?:hm)*h?|h(?:mh)*m?)$/ ;validate(document.getElementById('2e'),document.getElementById('2eError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="2eError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>Casais homossexuais mais velhos que os filhos, com qualquer quantidade de filhos homens e mulheres, mas que não tiveram dois filhos homens consecutivos.</li>
-        <div class="mb-3 row">
-          <label for="2f" class="col-sm-2 col-form-label">Arranjo:</label>
-          <div class="col-sm-6">
-            <!-- <input class="form-control" id="2f" onchange="const pattern = /^(?:HH|MM)h?(m|hm)*h?$/ ;validate(document.getElementById('2f'),document.getElementById('2fError'),pattern)"> -->
-			<input class="form-control" id="2f" onchange="const pattern = /^(?:HH|MM)(h|(m|hm)+)h?$/ ;validate(document.getElementById('2f'),document.getElementById('2fError'),pattern)">
-          </div>
-          <div class="col-sm-2">
-            <input type="text" readonly class="form-control-plaintext" id="2fError" value="">
-          </div>
-        </div>
-        <hr>
-        <li>Arranjo de no mínimo x∈ℕ e no máximo y∈ℕ, com x>0 , y>0 , e x≤y , de adultos (Hs ou Ms) mais velhos que os filhos, com qualquer quantidade de filhos homens e mulheres, mas que os três filhos mais novos não foram homens.
+          </ol>
           <div class="mb-3 row">
-            <div class="col-sm-2">
-              <label for="menor" class="col-sm-1 col-form-label">x:</label>
-              <input type="number" id="menor" name="menor" min="1" max="20" value="1" onchange="validateNumber(document.getElementById('menor'))">
+            <label for="senha" class="col-sm-1 col-form-label">Senha:</label>
+            <div class="col-sm-6">
+              <input class="form-control" type="text" id="senha" />
             </div>
             <div class="col-sm-2">
-              <label for="maior" class="col-sm-1 col-form-label">y:</label>
-              <input type="number" id="maior" name="maior" min="2" max="40" size="50" value="1" onchange="validateNumber(document.getElementById('maior'))">
-            </div>
-            <label for="2g" class="col-sm-1 col-form-label">Arranjo:</label>
-            <div class="col-sm-4">
-              <input class="form-control" id="2g" onchange="const expressao = '^(?!.*hhh$)([HM]{' + document.getElementById('menor').value + ',' + document.getElementById('maior').value + '})(h|m)*$'; console.log(expressao); const pattern = new RegExp(expressao) ;validate(document.getElementById('2g'),document.getElementById('2gError'),pattern)">
-            </div>
-            <div class="col-sm-2">
-              <input type="text" readonly class="form-control-plaintext" id="2gError" value="">
+              <b><div id="senhaError" class="form-control-plaintext"></div></b>
             </div>
           </div>
-          </li>
-      </ol>
+          <hr />
+        </li>
+
+        <li>
+          CPF:
+          <ol>
+            <li>
+              Sentenças devem ter o formato <b>xxx.xxx.xxx-xx</b>, onde x ∈ N
+            </li>
+          </ol>
+        </li>
+        <div class="mb-3 row">
+          <label for="cpf" class="col-sm-1 col-form-label">CPF:</label>
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="cpf" />
+          </div>
+          <div class="col-sm-2">
+            <b><div id="cpfError" class="form-control-plaintext"></div></b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Telefone:
+          <ol>
+            <li>
+              Sentenças devem ter um dos formatos seguintes:<br />
+              (xx) 9xxxx-xxxx<br />
+              (xx) 9xxxxxxxx<br />
+              xx 9xxxxxxxx<br />
+              onde x ∈ N.
+            </li>
+          </ol>
+        </li>
+        <div class="mb-3 row">
+          <label for="telefone" class="col-sm-1 col-form-label"
+            >Telefone:</label
+          >
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="telefone" />
+          </div>
+          <div class="col-sm-2">
+            <b><div id="telefoneError" class="form-control-plaintext"></div></b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Data e Horário:
+          <ol>
+            <li>
+              Sentenças devem ter o formato dd/mm/aaaa hh:mm:ss, onde d, m, a,
+              h, m, s ∈ N.
+            </li>
+          </ol>
+        </li>
+        <div class="mb-3 row">
+          <label for="datahora" class="col-sm-1 col-form-label"
+            >Data e Horário:</label
+          >
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="datahora" />
+          </div>
+          <div class="col-sm-2">
+            <b><div id="datahoraError" class="form-control-plaintext"></div></b>
+          </div>
+        </div>
+        <hr />
+        <li>
+          Número real com ou sem sinal::
+          <ol>
+            <li>
+              Sentenças devem começar com um dos símbolos do alfabeto {+, -, ε}
+            </li>
+            <li>
+              Em seguida, as sentenças devem ter, pelo menos, um símbolo do
+              alfabeto N
+            </li>
+            <li>
+              Em seguida, as sentenças devem ter, exatamente, um símbolo
+              separador “.”
+            </li>
+            <li>
+              Em seguida, as sentenças devem finalizar com, pelo menos, um
+              símbolo de N
+            </li>
+            <li>
+              Exceção: números sem a parte fracionária também devem ser aceitos
+            </li>
+          </ol>
+        </li>
+
+        <div class="mb-3 row">
+          <label for="numeroReal" class="col-sm-1 col-form-label"
+            >Número Real:</label
+          >
+          <div class="col-sm-6">
+            <input class="form-control" type="text" id="numeroReal" />
+          </div>
+          <div class="col-sm-2">
+            <b
+              ><div id="numeroRealError" class="form-control-plaintext"></div
+            ></b>
+          </div>
+        </div>
+      </ul>
     </ol>
-    
+    <script type="module" src="./js/listeners.js"></script>
   </body>
 </html>
