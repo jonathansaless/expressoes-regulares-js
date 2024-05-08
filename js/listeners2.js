@@ -1,122 +1,161 @@
-import { Validator } from './validator.js';
+import { FamilyValidator } from "./familyvalidator.js";
 
-const validator = new Validator();
+const familyValidator = new FamilyValidator();
 
-const nameInput = document.getElementById("name");
-const nameError = document.getElementById("nameError");
+const itemAInput = document.getElementById("item-a");
+const itemAError = document.getElementById("item-a-error");
 
-nameInput.addEventListener("input", () => {
-  const isValid = validator.checkName(nameInput.value);
+itemAInput.addEventListener("input", () => {
+  const isValid = familyValidator.itemA(itemAInput.value);
 
-  if (nameInput.value === "") {
-    nameError.textContent = "";
+  if (itemAInput.value === "") {
+    itemAError.textContent = "";
   } else if (!isValid) {
-    nameError.textContent = "Rejeitado!";
-    nameError.style.color = "red";
+    itemAError.textContent = "Rejeitado!";
+    itemAError.style.color = "red";
   } else {
-    nameError.textContent = "Aceito!";
-    nameError.style.color = "green";
+    itemAError.textContent = "Aceito!";
+    itemAError.style.color = "green";
   }
 });
 
-const emailInput = document.getElementById("email");
-const emailError = document.getElementById("emailError");
+const itemBInput = document.getElementById("item-b");
+const itemBError = document.getElementById("item-b-error");
 
-emailInput.addEventListener("input", () => {
-  const isValid = validator.checkEmail(emailInput.value);
+itemBInput.addEventListener("input", () => {
+  const isValid = familyValidator.itemB(itemBInput.value);
 
-  if (emailInput.value === "") {
-    emailError.textContent = "";
+  if (itemBInput.value === "") {
+    itemBError.textContent = "";
   } else if (!isValid) {
-    emailError.textContent = "Rejeitado!";
-    emailError.style.color = "red";
+    itemBError.textContent = "Rejeitado!";
+    itemBError.style.color = "red";
   } else {
-    emailError.textContent = "Aceito!";
-    emailError.style.color = "green";
+    itemBError.textContent = "Aceito!";
+    itemBError.style.color = "green";
   }
 });
 
-const senhaInput = document.getElementById("senha");
-const senhaError = document.getElementById("senhaError");
+const itemCInput = document.getElementById("item-c");
+const itemCError = document.getElementById("item-c-error");
 
-senhaInput.addEventListener("input", () => {
-  const isValid = validator.checkPassword(senhaInput.value);
+itemCInput.addEventListener("input", () => {
+  const isValid = familyValidator.itemC(itemCInput.value);
 
-  if (senhaInput.value === "") {
-    senhaError.textContent = "";
+  if (itemCInput.value === "") {
+    itemCError.textContent = "";
   } else if (!isValid) {
-    senhaError.textContent = "Rejeitado!";
-    senhaError.style.color = "red";
+    itemCError.textContent = "Rejeitado!";
+    itemCError.style.color = "red";
   } else {
-    senhaError.textContent = "Aceito!";
-    senhaError.style.color = "green";
+    itemCError.textContent = "Aceito!";
+    itemCError.style.color = "green";
   }
 });
 
-const cpfInput = document.getElementById("cpf");
-const cpfError = document.getElementById("cpfError");
+const itemDInput = document.getElementById("item-d");
+const itemDError = document.getElementById("item-d-error");
 
-cpfInput.addEventListener("input", () => {
-  const isValid = validator.checkCPF(cpfInput.value);
+itemDInput.addEventListener("input", () => {
+  const isValid = familyValidator.itemD(itemDInput.value);
 
-  if (cpfInput.value === "") {
-    cpfError.textContent = "";
+  if (itemDInput.value === "") {
+    itemDError.textContent = "";
   } else if (!isValid) {
-    cpfError.textContent = "Rejeitado!";
-    cpfError.style.color = "red";
+    itemDError.textContent = "Rejeitado!";
+    itemDError.style.color = "red";
   } else {
-    cpfError.textContent = "Aceito!";
-    cpfError.style.color = "green";
+    itemDError.textContent = "Aceito!";
+    itemDError.style.color = "green";
   }
 });
 
-const telefoneInput = document.getElementById("telefone");
-const telefoneError = document.getElementById("telefoneError");
+const itemEInput = document.getElementById("item-e");
+const itemEError = document.getElementById("item-e-error");
 
-telefoneInput.addEventListener("input", () => {
-  const isValid = validator.checkPhoneNumber(telefoneInput.value);
+itemEInput.addEventListener("input", () => {
+  const isValid = familyValidator.itemE(itemEInput.value);
 
-  if (telefoneInput.value === "") {
-    telefoneError.textContent = "";
+  if (itemEInput.value === "") {
+    itemEError.textContent = "";
   } else if (!isValid) {
-    telefoneError.textContent = "Rejeitado!";
-    telefoneError.style.color = "red";
+    itemEError.textContent = "Rejeitado!";
+    itemEError.style.color = "red";
   } else {
-    telefoneError.textContent = "Aceito!";
-    telefoneError.style.color = "green";
+    itemEError.textContent = "Aceito!";
+    itemEError.style.color = "green";
   }
 });
 
-const datahoraInput = document.getElementById("datahora");
-const datahoraError = document.getElementById("datahoraError");
+const itemFInput = document.getElementById("item-f");
+const itemFError = document.getElementById("item-f-error");
 
-datahoraInput.addEventListener("input", () => {
-  const isValid = validator.checkDateAndTime(datahoraInput.value);
+itemFInput.addEventListener("input", () => {
+  const isValid = familyValidator.itemF(itemFInput.value);
 
-  if (datahoraInput.value === "") {
-    datahoraError.textContent = "";
+  if (itemFInput.value === "") {
+    itemFError.textContent = "";
   } else if (!isValid) {
-    datahoraError.textContent = "Rejeitado!";
-    datahoraError.style.color = "red";
+    itemFError.textContent = "Rejeitado!";
+    itemFError.style.color = "red";
   } else {
-    datahoraError.textContent = "Aceito!";
-    datahoraError.style.color = "green";
+    itemFError.textContent = "Aceito!";
+    itemFError.style.color = "green";
   }
 });
 
-const numeroInput = document.getElementById("numeroReal");
-const numeroError = document.getElementById("numeroRealError");
+const itemGInput = document.getElementById("item-g");
+const itemGError = document.getElementById("item-g-error");
+const xInput = document.getElementById("x");
+const yInput = document.getElementById("y");
+// Serve para sinalizar se os valores de X e Y estão OK
+// Se não estiverem OK, não executará
+// isValid = familyValidator.itemG(x, y, itemGInput.value);
+// Isso evitar que ocorra erros na execução da expressão regular
+var isValidXY = false;
 
-numeroInput.addEventListener("input", () => {
-  const isValid = validator.checkRealNumber(numeroInput.value);
+itemGInput.addEventListener("input", () => {
+  const x = parseInt(xInput.value);
+  const y = parseInt(yInput.value);
+  // Se X e Y forem válidos, ele testa a expressão regular
+  // Se não, isValid é false, logo informa que o arranjo é rejeitado
+  var isValid = isValidXY
+    ? familyValidator.itemG(x, y, itemGInput.value)
+    : false;
 
-  if (numeroInput.value === "") {
-    numeroError.textContent = "";
+  if (itemGInput.value === "") {
+    itemGError.textContent = "";
   } else if (!isValid) {
-    numeroError.textContent = "Rejeitado!";
-    numeroError.style.color = "red";
+    itemGError.textContent = "Rejeitado!";
+    itemGError.style.color = "red";
   } else {
-    numeroError.textContent = "Aceito!";
-    numeroError.style.color = "green";
+    itemGError.textContent = "Aceito!";
+    itemGError.style.color = "green";
   }
 });
+
+function validateItemXY() {
+  const xInput = document.getElementById("x").value;
+  const yInput = document.getElementById("y").value;
+  const itemGError = document.getElementById("item-g-error");
+
+  if (xInput && yInput && (parseInt(xInput) <= 0 || parseInt(yInput) <= 0)) {
+    itemGError.textContent =
+      "Os valores de x e y devem ser números inteiros maiores que zero.";
+    itemGError.style.color = "red";
+    isValidXY = false;
+    return false;
+  } else if (parseInt(xInput) > parseInt(yInput)) {
+    itemGError.textContent = "O valor de x deve ser menor ou igual a y.";
+    itemGError.style.color = "red";
+    isValidXY = false;
+    return false;
+  } else {
+    itemGError.textContent = "";
+    isValidXY = true;
+    return true;
+  }
+}
+
+document.getElementById("x").addEventListener("input", validateItemXY);
+document.getElementById("y").addEventListener("input", validateItemXY);
