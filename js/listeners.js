@@ -8,7 +8,9 @@ const nameError = document.getElementById("nameError");
 nameInput.addEventListener("input", () => {
   const isValid = validator.checkName(nameInput.value);
 
-  if (!isValid) {
+  if (nameInput.value === "") {
+    nameError.textContent = "";
+  } else if (!isValid) {
     nameError.textContent = "Rejeitado!";
     nameError.style.color = "red";
   } else {
@@ -23,7 +25,9 @@ const emailError = document.getElementById("emailError");
 emailInput.addEventListener("input", () => {
   const isValid = validator.checkEmail(emailInput.value);
 
-  if (!isValid) {
+  if (emailInput.value === "") {
+    emailError.textContent = "";
+  } else if (!isValid) {
     emailError.textContent = "Rejeitado!";
     emailError.style.color = "red";
   } else {
@@ -38,7 +42,9 @@ const senhaError = document.getElementById("senhaError");
 senhaInput.addEventListener("input", () => {
   const isValid = validator.checkPassword(senhaInput.value);
 
-  if (!isValid) {
+  if (senhaInput.value === "") {
+    senhaError.textContent = "";
+  } else if (!isValid) {
     senhaError.textContent = "Rejeitado!";
     senhaError.style.color = "red";
   } else {
@@ -53,7 +59,9 @@ const cpfError = document.getElementById("cpfError");
 cpfInput.addEventListener("input", () => {
   const isValid = validator.checkCPF(cpfInput.value);
 
-  if (!isValid) {
+  if (cpfInput.value === "") {
+    cpfError.textContent = "";
+  } else if (!isValid) {
     cpfError.textContent = "Rejeitado!";
     cpfError.style.color = "red";
   } else {
@@ -68,7 +76,9 @@ const telefoneError = document.getElementById("telefoneError");
 telefoneInput.addEventListener("input", () => {
   const isValid = validator.checkPhoneNumber(telefoneInput.value);
 
-  if (!isValid) {
+  if (telefoneInput.value === "") {
+    telefoneError.textContent = "";
+  } else if (!isValid) {
     telefoneError.textContent = "Rejeitado!";
     telefoneError.style.color = "red";
   } else {
@@ -83,7 +93,9 @@ const datahoraError = document.getElementById("datahoraError");
 datahoraInput.addEventListener("input", () => {
   const isValid = validator.checkDateAndTime(datahoraInput.value);
 
-  if (!isValid) {
+  if (datahoraInput.value === "") {
+    datahoraError.textContent = "";
+  } else if (!isValid) {
     datahoraError.textContent = "Rejeitado!";
     datahoraError.style.color = "red";
   } else {
@@ -98,7 +110,9 @@ const numeroError = document.getElementById("numeroRealError");
 numeroInput.addEventListener("input", () => {
   const isValid = validator.checkRealNumber(numeroInput.value);
 
-  if (!isValid) {
+  if (numeroInput.value === "") {
+    numeroError.textContent = "";
+  } else if (!isValid) {
     numeroError.textContent = "Rejeitado!";
     numeroError.style.color = "red";
   } else {
