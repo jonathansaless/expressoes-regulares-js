@@ -139,7 +139,7 @@ function validateItemXY() {
   const yInput = document.getElementById("y").value;
   const itemGError = document.getElementById("item-g-error");
 
-  if (xInput && yInput && (parseInt(xInput) <= 0 || parseInt(yInput) <= 0)) {
+  if ((xInput || yInput) && (parseInt(xInput) <= 0 || parseInt(yInput) <= 0)) {
     itemGError.textContent =
       "Os valores de x e y devem ser números inteiros maiores que zero.";
     itemGError.style.color = "red";
