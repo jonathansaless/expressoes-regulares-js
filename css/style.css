@@ -36,8 +36,8 @@ nav {
 .nav-list li {
     letter-spacing: 3px;
     margin-left: 20px;
+    padding-top: 2vh;
 }
-
 
 .mobile-menu {
     display: none;
