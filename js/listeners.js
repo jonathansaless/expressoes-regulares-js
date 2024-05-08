@@ -92,8 +92,8 @@ datahoraInput.addEventListener("input", () => {
   }
 });
 
-const numeroInput = document.getElementById("numero");
-const numeroError = document.getElementById("numeroError");
+const numeroInput = document.getElementById("numeroReal");
+const numeroError = document.getElementById("numeroRealError");
 
 numeroInput.addEventListener("input", () => {
   const isValid = validator.checkRealNumber(numeroInput.value);
