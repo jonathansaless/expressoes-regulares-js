@@ -6,9 +6,6 @@ export class FamilyValidator {
      * e uma filha mulher.
      */
     itemA(arrangement) {
-        // INCOMPLETO - Verificar se há necessidade de último OU, pois se houver pelo menos 1 "h" a cadeia já é aceita
-        // (HM|MH)((h|m)m{2,}(h|m)|(h|m)h(h|m)|(h|m)h(h|m)*h(h|m))$
-        // ou
         const regex = /^(HM|MH)((h|m)*m{2,}(h|m)*|(h|m)*h(h|m)*)$/;
         const matche = arrangement.match(regex);
         return matche !== null;

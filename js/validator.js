@@ -1,7 +1,7 @@
 export class Validator {
     // Nome, nome do meio e sobrenome:
     checkName(name) {
-        const nameRegex = /^([A-Z]{1}[a-z]*)[ ]?([A-Z]{1}[a-z]*[ ]?)?([A-Z]{1}[a-z]*)\s*$/;
+        const nameRegex = /^([A-Z]{1}[a-z]*)[ ]([A-Z]{1}[a-z]*[ ])?([A-Z]{1}[a-z]*)$/;
         const matche = name.match(nameRegex);
         return matche !== null;
     }
