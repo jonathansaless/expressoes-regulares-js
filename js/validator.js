@@ -28,7 +28,7 @@ export class Validator {
 
     // Número de Telefone
     checkPhoneNumber(phoneNumber) {
-        const phoneNumberRegex = /^(^\(\d{2}\)[ ]{1}9\d{4}-?\d{4})|(^\d{2}[ ]{1}9\d{4}\d{4})$/;
+        const phoneNumberRegex = /^(^\(\d{2}\)[ ]9\d{4}-?\d{4})|(^\d{2}[ ]{1}9\d{4}\d{4})$/;
         const matche = phoneNumber.match(phoneNumberRegex);
         return matche !== null;
     }

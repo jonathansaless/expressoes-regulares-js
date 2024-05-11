@@ -6,7 +6,7 @@ export class FamilyValidator {
      * e uma filha mulher.
      */
     itemA(arrangement) {
-        const regex = /^(HM|MH)((h|m)*m{2,}(h|m)*|(h|m)*h(h|m)*)$/;
+        const regex = /^(HM|MH)((h|m)*m(h|m)*m(h|m)*|(h|m)*h(h|m)*)$/;
         const matche = arrangement.match(regex);
         return matche !== null;
     }
