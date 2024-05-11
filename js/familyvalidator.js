@@ -27,7 +27,7 @@ export class FamilyValidator {
      * mais novo homem.
      */
     itemC(arrangement) {
-        const regex = /^(HM|MH)m(h|m)*h$/;
+        const regex = /^(HM|MH)h(h|m)*m$/;
         const matche = arrangement.match(regex);
         return matche !== null;
     }
