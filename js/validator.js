@@ -6,6 +6,7 @@ export class Validator {
         return matche !== null;
     }
 
+    // Email
     checkEmail(email) {
         const emailRegex = /^[a-z]+@[a-z]+\.(com\.br|br)$/;
         const matche = email.match(emailRegex);
@@ -26,7 +27,7 @@ export class Validator {
         return matche !== null;
     }
 
-    // Número de Telefone
+    // Telefone
     checkPhoneNumber(phoneNumber) {
         const phoneNumberRegex = /^(^\(\d{2}\)[ ]9\d{4}-?\d{4})|(^\d{2}[ ]{1}9\d{4}\d{4})$/;
         const matche = phoneNumber.match(phoneNumberRegex);
@@ -40,7 +41,7 @@ export class Validator {
         return matche !== null;
     }
 
-    // Número real com ou sem sinal
+    // Número real
     checkRealNumber(number) {
         const realNumberRegex = /^[+-]?\d+(\.\d+)?$/;
         const matche = number.match(realNumberRegex);
